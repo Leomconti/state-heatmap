@@ -3,7 +3,7 @@ import pandas as pd
 from folium.plugins import HeatMap
 
 # Load your dataset
-df = pd.read_csv("dataset_with_lat_lon.csv")
+df = pd.read_csv("/data/dataset_with_lat_lon.csv")
 
 # Initialize a folium map
 m = folium.Map(location=[-27.2423, -50.2189], zoom_start=7)
@@ -12,4 +12,4 @@ m = folium.Map(location=[-27.2423, -50.2189], zoom_start=7)
 HeatMap(data=df[["Latitude", "Longitude", "Population"]].values, radius=15).add_to(m)
 
 # Save map to an HTML file
-m.save("santa_catarina_heatmap.html")
+m.save("/out/santa_catarina_heatmap.html")
